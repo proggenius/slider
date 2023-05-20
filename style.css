@@ -1,0 +1,75 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap");
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "Nunito", sans-serif;
+  background: #1b1c22;
+}
+
+.container {
+  display: flex;
+  width: 100%;
+  padding: 0 20px;
+  transition: 0.3s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+}
+
+.gallery__inner {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  overflow: hidden;
+}
+.gallery__item {
+  position: relative;
+  display: flex;
+  flex: 1;
+  height: 80vh;
+  color: #fff;
+  border-radius: 20px;
+  overflow: hidden;
+  filter: grayscale(1);
+  transition: 0.8s ease-in-out;
+  cursor: pointer;
+}
+.gallery__item.--active {
+  flex: 10;
+  filter: grayscale(0);
+}
+.gallery__item.--active > .gallery__title {
+  left: 20px;
+  opacity: 1;
+  background: rgba(27, 28, 34, 0.2);
+  transition: 0.5s ease-in 0.5s;
+}
+.gallery__item:not(:last-child) {
+  margin-right: 20px;
+}
+.gallery__item:nth-child(1) {
+  background: center/cover no-repeat url("https://cdn.pixabay.com/photo/2014/08/11/21/39/wall-416060_960_720.jpg");
+}
+.gallery__item:nth-child(2) {
+  background: center/cover no-repeat url("https://cdn.pixabay.com/photo/2016/12/23/12/40/night-1927265_960_720.jpg");
+}
+.gallery__item:nth-child(3) {
+  background: center/cover no-repeat url("https://cdn.pixabay.com/photo/2014/07/31/22/50/photographer-407068_960_720.jpg");
+}
+.gallery__item:nth-child(4) {
+  background: center/cover no-repeat url("https://cdn.pixabay.com/photo/2016/01/08/18/00/antelope-canyon-1128815_960_720.jpg");
+}
+.gallery__item:nth-child(5) {
+  background: center/cover no-repeat url("https://cdn.pixabay.com/photo/2015/04/23/22/00/tree-736885_960_720.jpg");
+}
+.gallery__title {
+  position: absolute;
+  bottom: 20px;
+  left: 5px;
+  padding: 5px 10px;
+  opacity: 0;
+  font-size: 30px;
+  border-radius: 5px;
+}
